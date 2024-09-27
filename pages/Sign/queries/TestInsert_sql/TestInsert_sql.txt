@@ -1,0 +1,6 @@
+-- TestInsert_sql - Insert random password hash and dummy data into MySQL
+INSERT INTO db_users 
+(vat_number, email, password_hash, first_name, representant, phone, role, created_at, updated_at, standart_address)
+VALUES 
+('{{vat_number}}', '{{email}}', '{{password_hash}}', '{{first_name}}', '{{representant}}', '{{phone}}', 'client', NOW(), NOW(), '{{standart_address}}');
+

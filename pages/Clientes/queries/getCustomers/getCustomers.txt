@@ -1,0 +1,18 @@
+-- This query fetches all customers from the `db_users` table.
+SELECT 
+  vat_number,        -- VAT number (Tax Identification Number)
+  email,             -- Customer's email
+  first_name,        -- Customer's first name
+  representant,      -- Representative's name
+  phone,             -- Customer's phone number
+  role,              -- User role (admin/client)
+  created_at,        -- Account creation timestamp
+  updated_at         -- Last updated timestamp
+FROM db_users        -- `db_users` is the table where customer data is stored
+WHERE role = 'client';  -- Ensure that only customers (not admin users) are fetched
+
+
+
+
+
+

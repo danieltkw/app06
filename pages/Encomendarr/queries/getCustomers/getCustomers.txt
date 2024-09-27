@@ -1,0 +1,8 @@
+-- getOrdersQuery
+SELECT 
+  o.order_id, 
+  o.created, 
+  JSON_LENGTH(o.items) AS items_count, 
+  o.total
+FROM db_orders o
+WHERE o.vat_number = {{this.params.vatNumber}};
