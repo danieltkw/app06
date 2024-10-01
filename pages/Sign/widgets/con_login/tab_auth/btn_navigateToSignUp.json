@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 51,
+  "bottomRow": 52,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "TERTIARY",
@@ -39,7 +39,7 @@
   "mobileLeftColumn": 41,
   "mobileRightColumn": 57,
   "mobileTopRow": 91,
-  "onClick": "{{functions.setDefaultTab('Sign Up')}}",
+  "onClick": "{{functions.setDefaultTab('Canvas3')}}",
   "originalBottomRow": 51,
   "originalTopRow": 47,
   "parentColumnSpace": 19.8125,
@@ -59,7 +59,7 @@
     "Buttons"
   ],
   "text": "Registre-se aqui",
-  "topRow": 47,
+  "topRow": 48,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "6mx5oq7on0",

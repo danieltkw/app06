@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 11,
+  "bottomRow": 12,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -21,6 +21,8 @@
   "isVisible": true,
   "key": "au5rdsrbxv",
   "leftColumn": 2,
+  "originalBottomRow": 11,
+  "originalTopRow": 6,
   "parentColumnSpace": 18.1875,
   "parentId": "8rq3ao3yqz",
   "parentRowSpace": 10,
@@ -30,7 +32,7 @@
     "click",
     "submit"
   ],
-  "topRow": 6,
+  "topRow": 7,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "6zuo29nk37",

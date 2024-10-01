@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- SignIn_sql - Login \nSELECT * FROM db_users \nWHERE email = '{{inp_email.text}}';\n-- # // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com\n",
+      "body": "-- SignIn_sql - Login \nSELECT email, password_hash \nFROM db_users \nWHERE email = '{{inp_email.text}}';\n-- # // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

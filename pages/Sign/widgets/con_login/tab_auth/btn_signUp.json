@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 60,
+  "bottomRow": 55,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -28,7 +28,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "d80868s2dr",
-  "leftColumn": 6,
+  "leftColumn": 5,
   "onClick": "{{functions.register();}}",
   "originalBottomRow": 61,
   "originalTopRow": 55,
@@ -39,13 +39,13 @@
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
-  "rightColumn": 57,
+  "rightColumn": 56,
   "searchTags": [
     "click",
     "submit"
   ],
   "text": "RESGISTRAR",
-  "topRow": 54,
+  "topRow": 49,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "mwnderxhs9",

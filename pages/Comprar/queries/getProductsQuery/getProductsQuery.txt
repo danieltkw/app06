@@ -1,0 +1,11 @@
+-- getProductsQuery
+SELECT 
+  product_id, 
+  name, 
+  sku, 
+  category, 
+  price, 
+  total_stock
+FROM db_products;
+-- 
+

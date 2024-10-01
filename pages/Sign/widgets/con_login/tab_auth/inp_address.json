@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 47,
+  "bottomRow": 42,
   "boxShadow": "none",
   "defaultText": "",
   "displayName": "Input",
@@ -44,7 +44,7 @@
   "placeholderText": "Insira a morada primaria",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
-  "rightColumn": 62,
+  "rightColumn": 59,
   "searchTags": [
     "form",
     "text input",
@@ -52,7 +52,7 @@
     "textarea"
   ],
   "shouldAllowAutofill": false,
-  "topRow": 40,
+  "topRow": 35,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "rwa0h4efvs",

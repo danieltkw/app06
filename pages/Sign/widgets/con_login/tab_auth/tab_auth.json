@@ -5,12 +5,12 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "",
-  "bottomRow": 53,
+  "bottomRow": 58,
   "boxShadow": "none",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 530,
+      "bottomRow": 540,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -49,7 +49,7 @@
       "rightColumn": 475.5,
       "shouldScrollContents": false,
       "tabId": "tab1",
-      "tabName": "Sign In",
+      "tabName": "Canvas2",
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
@@ -58,7 +58,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 640,
+      "bottomRow": 590,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -97,7 +97,7 @@
       "rightColumn": 475.5,
       "shouldScrollContents": false,
       "tabId": "tab2",
-      "tabName": "Sign Up",
+      "tabName": "Canvas3",
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
@@ -136,8 +136,8 @@
   "mobileLeftColumn": 37,
   "mobileRightColumn": 61,
   "mobileTopRow": 92,
-  "originalBottomRow": 53,
-  "originalTopRow": 0,
+  "originalBottomRow": 58,
+  "originalTopRow": 4,
   "parentColumnSpace": 19.8125,
   "parentId": "oupq4ybxxj",
   "parentRowSpace": 10,
@@ -151,7 +151,7 @@
       "id": "tab1",
       "index": 0,
       "isVisible": true,
-      "label": "Sign In",
+      "label": "Canvas2",
       "positioning": "vertical",
       "widgetId": "8rq3ao3yqz"
     },
@@ -159,7 +159,7 @@
       "id": "tab2",
       "index": 1,
       "isVisible": true,
-      "label": "Sign Up",
+      "label": "Canvas3",
       "positioning": "vertical",
       "widgetId": "f5yn1hxqze"
     }
@@ -167,7 +167,7 @@
   "tags": [
     "Layout"
   ],
-  "topRow": 0,
+  "topRow": 4,
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "8voawvc8hu",
