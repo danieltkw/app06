@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_812897f5-22c7-4e68-9bea-52dab8084410",
+  "id": "Pedidos_vat_manager_ped",
+  "unpublishedCollection": {
+    "name": "vat_manager_ped",
+    "pageId": "Pedidos",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

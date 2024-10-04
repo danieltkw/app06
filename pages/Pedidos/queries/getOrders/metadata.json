@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- getOrders - Fetch orders for a client based on their VAT (clientId)\nSELECT \n  o.order_id, \n  o.shipping_address, \n  o.total, \n  o.delivery_status, \n  o.created\nFROM db_orders o\nINNER JOIN db_users u ON o.vat_number = u.vat_number\nWHERE u.vat_number = {{appsmith.store.clientId}}  -- Ensure the right client ID is used\nORDER BY o.created DESC;\n\n\n\n",
+      "body": "-- getOrders - Fetch orders for a client based on their VAT (clientId)\nSELECT \n  o.order_id, \n  o.shipping_address, \n  o.total, \n  o.delivery_status, \n  o.created\nFROM db_orders o\nINNER JOIN db_users u \n  ON o.vat_number = u.vat_number COLLATE utf8mb4_general_ci  -- Set the correct collation here\nWHERE u.vat_number = {{appsmith.store.clientId}} \nORDER BY o.created DESC;\n\n-- \n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

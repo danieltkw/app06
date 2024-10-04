@@ -12,6 +12,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -29,7 +32,7 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "originalBottomRow": 8,
+  "originalBottomRow": 5,
   "originalTopRow": 0,
   "overflow": "NONE",
   "parentColumnSpace": 23.578125,
@@ -37,14 +40,14 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 24,
+  "rightColumn": 56,
   "searchTags": [
     "typography",
     "paragraph",
     "label"
   ],
   "shouldTruncate": false,
-  "text": "Produtos",
+  "text": "Produtos - {{appsmith.store.vat_number || 'N/A'}}\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 0,

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_9ce8c34a-b3a5-4557-92a9-c133c4ca651b",
+  "id": "Sign_user_token",
+  "unpublishedCollection": {
+    "name": "user_token",
+    "pageId": "Sign",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

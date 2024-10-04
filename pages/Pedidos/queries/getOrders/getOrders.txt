@@ -6,9 +6,11 @@ SELECT
   o.delivery_status, 
   o.created
 FROM db_orders o
-INNER JOIN db_users u ON o.vat_number = u.vat_number
-WHERE u.vat_number = {{appsmith.store.clientId}}  -- Ensure the right client ID is used
+INNER JOIN db_users u 
+  ON o.vat_number = u.vat_number COLLATE utf8mb4_general_ci  -- Set the correct collation here
+WHERE u.vat_number = {{appsmith.store.clientId}} 
 ORDER BY o.created DESC;
 
+-- 
 
 

@@ -5,12 +5,12 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "",
-  "bottomRow": 58,
+  "bottomRow": 62,
   "boxShadow": "none",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 540,
+      "bottomRow": 610,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -58,7 +58,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 590,
+      "bottomRow": 610,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -105,7 +105,7 @@
       "widgetName": "Canvas3"
     }
   ],
-  "defaultTab": "{{functions.defaultTab}}",
+  "defaultTab": "{{initialize.defaultTab}}",
   "displayName": "Tabs",
   "dynamicBindingPathList": [
     {
@@ -136,8 +136,8 @@
   "mobileLeftColumn": 37,
   "mobileRightColumn": 61,
   "mobileTopRow": 92,
-  "originalBottomRow": 58,
-  "originalTopRow": 4,
+  "originalBottomRow": 62,
+  "originalTopRow": 1,
   "parentColumnSpace": 19.8125,
   "parentId": "oupq4ybxxj",
   "parentRowSpace": 10,
@@ -167,7 +167,7 @@
   "tags": [
     "Layout"
   ],
-  "topRow": 4,
+  "topRow": 1,
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "8voawvc8hu",

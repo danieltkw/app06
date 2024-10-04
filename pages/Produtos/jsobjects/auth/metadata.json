@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_aa27d512-8c94-4080-816c-f8efc56971c8",
+  "id": "Produtos_auth",
+  "unpublishedCollection": {
+    "name": "auth",
+    "pageId": "Produtos",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

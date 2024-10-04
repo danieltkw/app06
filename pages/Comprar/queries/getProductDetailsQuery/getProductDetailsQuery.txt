@@ -1,0 +1,12 @@
+-- getProductDetailsQuery
+SELECT 
+  name, 
+  sku, 
+  category, 
+  price, 
+  total_stock, 
+  warehouse_location, 
+  description, 
+  nutritional_details 
+FROM db_products 
+WHERE product_id = {{Table_products.selectedRow.Product_ID}};

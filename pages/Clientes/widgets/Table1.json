@@ -41,7 +41,9 @@
     "updated_at"
   ],
   "columnUpdatedAt": 1727471502339,
-  "columnWidthMap": {},
+  "columnWidthMap": {
+    "vat_number": 96
+  },
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": 0,
   "defaultSelectedRowIndices": [

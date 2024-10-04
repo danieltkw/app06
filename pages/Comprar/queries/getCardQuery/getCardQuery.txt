@@ -1,0 +1,12 @@
+-- getCardQuery
+SELECT 
+  sc.card_id, 
+  sc.vat_number, 
+  sc.product_id, 
+  sc.product_name, 
+  sc.quantity, 
+  sc.price, 
+  sc.total_price 
+FROM db_shop_card AS sc
+JOIN db_products AS p ON sc.product_id = p.product_id
+WHERE sc.vat_number = {{appsmith.store.vat_number}};

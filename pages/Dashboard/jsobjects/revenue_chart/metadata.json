@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_80e7a6b6-82ba-44ef-9a05-6da91ab927a3",
+  "id": "Dashboard_revenue_chart",
+  "unpublishedCollection": {
+    "name": "revenue_chart",
+    "pageId": "Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

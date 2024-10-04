@@ -7,7 +7,7 @@
   "canOutsideClickClose": true,
   "children": [
     {
-      "bottomRow": 930,
+      "bottomRow": 320,
       "canExtend": true,
       "detachFromLayout": true,
       "displayName": "Canvas",
@@ -19,7 +19,7 @@
       "isVisible": true,
       "key": "48jz6a6h31",
       "leftColumn": 0,
-      "minHeight": 906,
+      "minHeight": 324,
       "parentColumnSpace": 1,
       "parentId": "c2n6c7jzvp",
       "parentRowSpace": 1,
@@ -51,7 +51,7 @@
       "key": "onClose"
     }
   ],
-  "height": 906,
+  "height": 324,
   "hideCard": false,
   "iconSVG": "/static/media/icon.4975978e9a961fb0bfb4e38de7ecc7c5.svg",
   "isCanvas": true,
@@ -78,5 +78,5 @@
   "version": 2,
   "widgetId": "c2n6c7jzvp",
   "widgetName": "mdl_productDetails",
-  "width": 964
+  "width": 427.5
 }

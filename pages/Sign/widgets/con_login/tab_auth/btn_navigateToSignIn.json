@@ -39,7 +39,7 @@
   "mobileLeftColumn": 41,
   "mobileRightColumn": 57,
   "mobileTopRow": 91,
-  "onClick": "{{functions.setDefaultTab('Canvas2')}}",
+  "onClick": "{{initialize.setDefaultTab('Canvas2')}}",
   "originalBottomRow": 65,
   "originalTopRow": 61,
   "parentColumnSpace": 19.8125,

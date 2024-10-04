@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_87abaf39-0190-4d7f-af15-df2aa1d2b2a4",
+  "id": "Comprar_getProducts",
+  "unpublishedCollection": {
+    "name": "getProducts",
+    "pageId": "Comprar",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

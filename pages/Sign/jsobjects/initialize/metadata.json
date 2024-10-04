@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_6876ca6d-6f20-49fc-b790-c284279ebda4",
+  "id": "Sign_initialize",
+  "unpublishedCollection": {
+    "name": "initialize",
+    "pageId": "Sign",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "defaultTab",
+        "value": "'Canvas2'"
+      }
+    ]
+  }
+}

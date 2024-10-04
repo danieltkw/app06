@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_50cd7916-1420-4ac0-aef7-695a431ec99c",
+  "id": "Comprar_getCard",
+  "unpublishedCollection": {
+    "name": "getCard",
+    "pageId": "Comprar",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

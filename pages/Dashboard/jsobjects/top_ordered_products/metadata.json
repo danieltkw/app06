@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_d955bc2a-2df7-43e4-aca6-d807e21dce30",
+  "id": "Dashboard_top_ordered_products",
+  "unpublishedCollection": {
+    "name": "top_ordered_products",
+    "pageId": "Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

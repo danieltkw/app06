@@ -28,7 +28,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "33i1j8atzx",
-  "leftColumn": 61,
+  "leftColumn": 62,
   "onClick": "{{closeModal('mdl_customerDetails')}}",
   "parentId": "egj9nhnqcw",
   "renderMode": "CANVAS",

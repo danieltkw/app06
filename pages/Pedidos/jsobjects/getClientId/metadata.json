@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_42b9761f-3001-433a-8ba9-1ba9e11a8f7f",
+  "id": "Pedidos_getClientId",
+  "unpublishedCollection": {
+    "name": "getClientId",
+    "pageId": "Pedidos",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

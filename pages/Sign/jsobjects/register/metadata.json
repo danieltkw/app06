@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_fbbf8a9f-b189-46c5-a7c3-df9b2858b800",
+  "id": "Sign_register",
+  "unpublishedCollection": {
+    "name": "register",
+    "pageId": "Sign",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

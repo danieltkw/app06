@@ -42,7 +42,7 @@
   "maxDynamicHeight": 9000,
   "minDate": "1920-12-31T18:30:00.000Z",
   "minDynamicHeight": 4,
-  "onDateSelected": "{{utils.getClientOrders();}}",
+  "onDateSelected": "{{filters.getClientOrders();}}",
   "originalBottomRow": 12,
   "originalTopRow": 8,
   "parentColumnSpace": 15.033203125,

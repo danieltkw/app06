@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_c45c090c-c155-4b54-a21e-1f5caba50388",
+  "id": "Sign_vat_manager",
+  "unpublishedCollection": {
+    "name": "vat_manager",
+    "pageId": "Sign",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

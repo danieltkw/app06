@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_dca1fd84-4829-4b3f-9cdd-6348d0ab7959",
+  "id": "Sign_bcryptSimulator",
+  "unpublishedCollection": {
+    "name": "bcryptSimulator",
+    "pageId": "Sign",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

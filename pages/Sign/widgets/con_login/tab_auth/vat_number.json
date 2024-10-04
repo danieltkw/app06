@@ -13,6 +13,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "validation"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -24,7 +27,7 @@
   "isDeprecated": false,
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": true,
   "isVisible": true,
   "key": "oyi4aa4s68",
   "label": "NIF / VAT",
@@ -35,7 +38,9 @@
   "labelWidth": 5,
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
+  "maxNum": "9",
   "minDynamicHeight": 4,
+  "minNum": "6",
   "minWidth": 450,
   "mobileBottomRow": 34,
   "mobileLeftColumn": 7,
@@ -65,6 +70,7 @@
   ],
   "topRow": 22,
   "type": "INPUT_WIDGET_V2",
+  "validation": "{{ vat_number.text && vat_number.text.length === 9 && !isNaN(vat_number.text) }}",
   "version": 2,
   "widgetId": "x4mcuoduas",
   "widgetName": "vat_number"
