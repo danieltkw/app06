@@ -1,0 +1,19 @@
+-- getOrderDetails - Fetch details for a specific order
+SELECT 
+  o.order_id, 
+  o.items, 
+  o.shipping_address, 
+  o.subtotal, 
+  o.taxes, 
+  o.shipping, 
+  o.carrier, 
+  o.weight_kg, 
+  o.weight_lbs, 
+  o.dimensions, 
+  o.tracking_no, 
+  o.total, 
+  o.delivery_status, 
+  o.created
+FROM db_orders o
+WHERE o.order_id = {{appsmith.store.selectedOrderId}};
+-- 
