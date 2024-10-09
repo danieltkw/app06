@@ -18,16 +18,7 @@ export default {
                 console.log('Stored Hash:', storedHash);
                 showAlert('Stored Hash: ' + storedHash);
 
-                const useCustomCrypt = true;
-                let isPasswordValid;
-
-                if (useCustomCrypt) {
-                    console.log('Using custom bcryptSimulator for comparison');
-                    isPasswordValid = await bcryptSimulator.validatePassword(password, storedHash);
-                } else {
-                    console.log('Using actual bcrypt for comparison');
-                    isPasswordValid = dcodeIO.bcrypt.compareSync(password, storedHash);
-                }
+                const isPasswordValid = dcodeIO.bcrypt.compareSync(password, storedHash);
 
                 console.log('Password Comparison Result:', isPasswordValid);
                 showAlert('Password comparison result: ' + isPasswordValid);
@@ -52,6 +43,7 @@ export default {
         }
     }
 };
+
 
 // ------------------------------------------------------------
 // Login function with improved logging for userID and password comparison

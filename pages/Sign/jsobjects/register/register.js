@@ -1,36 +1,48 @@
 export default {
     async register() {
         try {
-            // Retrieve the input values
-            const vatNumber = vat_number.text.trim();
-            const email = inp_registerEmail.text.trim();
-            const passwordHash = appsmith.store.hashedPassword;
-            const firstName = first_name.text.trim();
-            const representative = representant.text.trim();
-            const phone = inp_phone.text.trim();
-            const address = inp_address.text.trim();
+            // Retrieve the input values (use correct widget properties)
+            const vatNumber = vat_number.value?.toString().trim();
+            const email = inp_registerEmail.text?.trim();
+            const password = inp_registerPassword.text?.trim();
+            const firstName = first_name.text?.trim();
+            const representant = representant_.text?.trim();  // Updated variable name
+            const phone = inp_phone.value?.toString().trim();
+            const address = inp_address.text?.trim();
 
-            // Ensure all required fields are filled
-            if (!vatNumber || !email || !passwordHash || !firstName || !representative || !phone || !address) {
-                showAlert('Please fill in all required fields.', 'error');
-                return;  // Stop if validation fails
-            }
-
-            // Log all the values before running the query
+            // Log the values before running the SQL query
             console.log('VAT Number:', vatNumber);
             console.log('Email:', email);
-            console.log('Password Hash:', passwordHash);
+            console.log('Password:', password);
             console.log('First Name:', firstName);
-            console.log('Representative:', representative);
+            console.log('Representative:', representant);  // Log representative after declaration
             console.log('Phone:', phone);
             console.log('Address:', address);
 
-            // Run the SQL query
+            // Ensure all required fields are filled
+            if (!vatNumber || !email || !password || !firstName || !representant || !phone || !address) {
+                showAlert('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            // Hash the password using dcodeIO.bcrypt
+            const salt = dcodeIO.bcrypt.genSaltSync(10);
+            const hashedPassword = dcodeIO.bcrypt.hashSync(password, salt);
+
+            // Store the hashed password in Appsmith store
+            await storeValue('hashedPassword', hashedPassword);
+
+            // Store the VAT number as clientId in Appsmith store
+            await storeValue('clientId', vatNumber);
+
+            // Log the hashed password and clientId
+            console.log('Hashed Password:', hashedPassword);
+            console.log('Client ID (VAT Number):', vatNumber);
+
+            // Registration query
             await SignUp_sql.run();
 
             showAlert('Registration Successful!', 'success');
-
-            // Navigate to the Dashboard
             navigateTo('Dashboard');
         } catch (error) {
             console.error('Error during registration:', error);
@@ -39,3 +51,7 @@ export default {
     }
 };
 
+// ------------------------------------------------------------
+// register.js - Handles user registration and stores clientId (VAT)
+// Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
+// ------------------------------------------------------------
