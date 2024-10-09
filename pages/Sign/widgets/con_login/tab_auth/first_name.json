@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 6,
+  "bottomRow": 4,
   "boxShadow": "none",
   "defaultText": "",
   "displayName": "Input",
@@ -50,7 +50,7 @@
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 59,
+  "rightColumn": 58,
   "searchTags": [
     "form",
     "text input",

@@ -44,7 +44,7 @@
   "placeholderText": "Insira o email",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
-  "rightColumn": 59,
+  "rightColumn": 58,
   "searchTags": [
     "form",
     "text input",

@@ -40,7 +40,7 @@
     "paragraph"
   ],
   "shouldTruncate": false,
-  "text": "{{utils.dashboardMetrics.data?.packedOrders || 0}} \n",
+  "text": "{{dashboard_metrics.dashboardMetrics.data?.packedOrders || 0}} \n",
   "textAlign": "LEFT",
   "textColor": "{{appsmith.theme.colors.primaryColor}}",
   "topRow": 3,

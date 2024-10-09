@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- SignUp_sql - Registration Query\nINSERT INTO db_users \n(vat_number, email, password_hash, first_name, representant, phone, role, created_at, updated_at, standart_address)\nVALUES \n('{{vat_number.text}}', '{{inp_registerEmail.text}}', '{{appsmith.store.hashedPassword}}', '{{first_name.text}}', '{{representant.text}}', '{{inp_phone.text}}', 'client', NOW(), NOW(), '{{inp_address.text}}');\n-- # // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com\n",
+      "body": "-- SignUp_sql - Registration Query\nINSERT INTO db_users \n(vat_number, email, password_hash, first_name, representant, phone, role, created_at, updated_at, standart_address)\nVALUES \n({{vat_number.text}}, {{inp_registerEmail.text}}, {{appsmith.store.hashedPassword}}, {{first_name.text}}, {{representant.text}}, {{inp_phone.text}}, 'client', NOW(), NOW(), {{inp_address.text}});\n-- # // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

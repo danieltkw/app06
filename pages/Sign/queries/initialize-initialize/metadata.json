@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "fullyQualifiedName": "initialize.initialize",
     "name": "initialize",
     "pageId": "Sign",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

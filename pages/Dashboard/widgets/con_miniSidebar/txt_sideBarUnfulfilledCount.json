@@ -48,7 +48,7 @@
     "label"
   ],
   "shouldTruncate": false,
-  "text": "{{utils.dashboardMetrics.data?.unfulfilledOrders || 0}}",
+  "text": "{{dashboard_metrics.dashboardMetrics.data?.unfulfilledOrders || 0}}",
   "textAlign": "CENTER",
   "textColor": "{{appsmith.theme.colors.backgroundColor}}",
   "topRow": 12,

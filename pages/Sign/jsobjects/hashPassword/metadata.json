@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_2d9bb7e5-2c65-4088-bd12-f44e8ee6c1c1",
+  "id": "Sign_hashPassword",
+  "unpublishedCollection": {
+    "name": "hashPassword",
+    "pageId": "Sign",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

@@ -9,11 +9,3 @@ SELECT
 FROM db_orders o
 INNER JOIN db_users u ON o.vat_number = u.vat_number
 WHERE u.vat_number = {{appsmith.store.clientId}};
-
-
-
-
-
-
-
-

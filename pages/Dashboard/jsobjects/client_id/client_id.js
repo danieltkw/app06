@@ -1,48 +1,48 @@
 export default {
-    // Function to fetch and store VAT (clientId)
     async fetchAndSetClientId() {
         try {
-            const userID = appsmith.store.userID;  // Get stored VAT (userID) from login
-            if (userID) {
-                console.log("Fetched userID from store:", userID);
-                storeValue("clientId", userID);  // Store the VAT in Appsmith store as clientId
+            const userID = appsmith.store.userID;
+            console.log('Fetched userID from store:', userID);  // Log the fetched userID
+
+            if (userID && userID !== '1') {  // Check that the userID is valid (not '1')
+                console.log('Storing userID as clientId:', userID);  // Log to confirm storing
+                storeValue("clientId", userID);  // Store userID as clientId
                 return userID;
             } else {
-                console.log('No userID in store. Fetching from DB');
-                const result = await getClientIdFromDB.run(); // Fallback query to fetch the VAT (vat_number)
+                console.log('No valid userID found in store, running DB query...');
+                const result = await getClientIdFromDB.run();
 
                 if (result && result.length > 0) {
-                    const clientId = result[0].client_id; // 'vat_number' as 'client_id'
-                    console.log("Fetched clientId from DB:", clientId);
-                    storeValue("clientId", clientId); // Store the VAT in Appsmith store
+                    const clientId = result[0].client_id;
+                    console.log("Fetched clientId from DB:", clientId);  // Log fetched clientId from DB
+                    storeValue("clientId", clientId);  // Store the fetched clientId
                     return clientId;
                 } else {
-                    console.log("No result from getClientIdFromDB");
-                    const defaultClientId = '1'; // Use '1' as default for testing
-                    storeValue("clientId", defaultClientId);
-                    return defaultClientId;
+                    console.log('No clientId found in DB. Returning null');
+                    return null;  // Instead of defaulting to '1', return null or handle this in the UI
                 }
             }
         } catch (error) {
-            console.error('Error fetching VAT number (client ID):', error);
-            const defaultClientId = '1'; // Use '1' as default for testing
-            storeValue("clientId", defaultClientId);
-            return defaultClientId;
+            console.error('Error fetching client ID:', error);
+            return null;  // Return null in case of an error
         }
     },
 
-    // Function to get the stored VAT (client ID)
     async getClientId() {
-        if (appsmith.store.clientId) {
-            console.log('Using stored clientId:', appsmith.store.clientId);
+        console.log('Checking if clientId is stored in appsmith.store...');
+        if (appsmith.store.clientId && appsmith.store.clientId !== '1') {  // Ensure valid clientId
+            console.log('Using stored clientId:', appsmith.store.clientId);  // Log stored clientId
             return appsmith.store.clientId;
         } else {
-            return await this.fetchAndSetClientId();  // Fetch and store clientId if not already stored
+            console.log('No valid clientId found in store, fetching from DB or default...');
+            return await this.fetchAndSetClientId();  // Fetch and set clientId if not available
         }
     }
 };
 
 // ------------------------------------------------------------
-// client_id.js - Handles fetching and storing client ID
+// client_id.js - Fetching and logging userID/clientId with enhanced error handling
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
+

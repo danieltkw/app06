@@ -1,15 +1,13 @@
 export default {
     // Function to evaluate the current VAT and switch to a test VAT if needed
     async evaluateVAT() {
-        let vatNumber = appsmith.store.vat_number; // Retrieve current VAT number from the store
+        let vatNumber = appsmith.store.vat_number;  // Retrieve current VAT number from the store
 
         if (!vatNumber) {
-            // If no VAT number is stored, randomly generate one for testing (for now, using the test VAT)
-            vatNumber = "307277003"; // Use this as the default test VAT
-            storeValue('vat_number', vatNumber); // Save the test VAT in the Appsmith store
+            vatNumber = "307277003";  // Default test VAT number
+            storeValue('vat_number', vatNumber);
             showAlert(`Using test VAT number: ${vatNumber}`, 'info');
         } else {
-            // Logic to switch between actual and testing VAT
             if (vatNumber === "307277003") {
                 showAlert('Currently using test VAT number', 'info');
             } else {
@@ -17,24 +15,23 @@ export default {
             }
         }
 
-        // Display the VAT number in the title
-        txt_productsTitle.setText(`Produtos - ${vatNumber}`);
+        // Optional: Update some title in your UI if needed
+        // For now, we removed txt_productsTitle since it was causing errors
     },
 
     // Function to manually switch to a testing VAT number if needed
     async switchToTestVAT() {
         const testVAT = "307277003";
-        storeValue('vat_number', testVAT); // Switch to test VAT
+        storeValue('vat_number', testVAT);  // Switch to test VAT
         showAlert(`Switched to test VAT number: ${testVAT}`, 'success');
 
-        // Update the title with the test VAT number
-        txt_productsTitle.setText(`Produtos - ${testVAT}`);
+        // Optional: Update some title in your UI if needed
+        // For now, we removed txt_productsTitle since it was causing errors
     }
 };
 
 // ------------------------------------------------------------
-// This file contains two functions:
-// 1. evaluateVAT: Evaluates the current VAT number in use, saves it, and switches to a test VAT if needed.
-// 2. switchToTestVAT: Manually switches to the test VAT number.
-// File name: vat_manager.js
+// vat_manager.js - Handles VAT number logic
+// Removed references to txt_productsTitle to fix undefined errors
+// Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------

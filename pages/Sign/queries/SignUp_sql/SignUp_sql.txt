@@ -2,5 +2,5 @@
 INSERT INTO db_users 
 (vat_number, email, password_hash, first_name, representant, phone, role, created_at, updated_at, standart_address)
 VALUES 
-('{{vat_number.text}}', '{{inp_registerEmail.text}}', '{{appsmith.store.hashedPassword}}', '{{first_name.text}}', '{{representant.text}}', '{{inp_phone.text}}', 'client', NOW(), NOW(), '{{inp_address.text}}');
+({{vat_number.text}}, {{inp_registerEmail.text}}, {{appsmith.store.hashedPassword}}, {{first_name.text}}, {{representant.text}}, {{inp_phone.text}}, 'client', NOW(), NOW(), {{inp_address.text}});
 -- # // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com

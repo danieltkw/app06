@@ -30,6 +30,6 @@
     "fullyQualifiedName": "user_token.createToken",
     "name": "createToken",
     "pageId": "Sign",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

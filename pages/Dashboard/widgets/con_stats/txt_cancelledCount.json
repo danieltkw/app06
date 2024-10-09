@@ -40,7 +40,7 @@
     "paragraph"
   ],
   "shouldTruncate": false,
-  "text": "{{utils.dashboardMetrics.data?.cancelledOrders || 0}} \n",
+  "text": "{{dashboard_metrics.dashboardMetrics()?.cancelledOrders || 0}}\n",
   "textAlign": "LEFT",
   "textColor": "{{appsmith.theme.colors.primaryColor}}",
   "topRow": 3,

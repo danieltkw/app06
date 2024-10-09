@@ -26,10 +26,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "fullyQualifiedName": "initialize.setDefaultTab",
     "name": "setDefaultTab",
     "pageId": "Sign",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }
