@@ -6,7 +6,8 @@ SELECT
   sc.product_name, 
   sc.quantity, 
   sc.price, 
-  sc.total_price 
+  (sc.quantity * sc.price) AS total_price
 FROM db_shop_card AS sc
 JOIN db_products AS p ON sc.product_id = p.product_id
-WHERE sc.vat_number = {{appsmith.store.vat_number}};
+WHERE sc.vat_number = {{appsmith.store.clientId}};
+

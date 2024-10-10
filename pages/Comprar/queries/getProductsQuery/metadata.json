@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- getProductsQuery\nSELECT \n  product_id, \n  name, \n  sku, \n  category, \n  price, \n  total_stock\nFROM db_products;\n-- \n\n",
+      "body": "-- getProductsQuery\nSELECT \n  product_id, \n  name, \n  sku, \n  category, \n  price, \n  total_stock\nFROM db_products;\n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- getCardQuery\nSELECT \n  sc.card_id, \n  sc.vat_number, \n  sc.product_id, \n  sc.product_name, \n  sc.quantity, \n  sc.price, \n  sc.total_price \nFROM db_shop_card AS sc\nJOIN db_products AS p ON sc.product_id = p.product_id\nWHERE sc.vat_number = {{appsmith.store.vat_number}};\n",
+      "body": "-- getCardQuery\nSELECT \n  sc.card_id, \n  sc.vat_number, \n  sc.product_id, \n  sc.product_name, \n  sc.quantity, \n  sc.price, \n  (sc.quantity * sc.price) AS total_price\nFROM db_shop_card AS sc\nJOIN db_products AS p ON sc.product_id = p.product_id\nWHERE sc.vat_number = {{appsmith.store.clientId}};\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -7,5 +7,5 @@ SELECT
   price, 
   total_stock
 FROM db_products;
--- 
+
 

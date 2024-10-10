@@ -47,7 +47,7 @@
     "label"
   ],
   "shouldTruncate": false,
-  "text": "Produtos - {{appsmith.store.vat_number || 'N/A'}}\n",
+  "text": "Produtos - {{appsmith.store.clientId || 'N/A'}}\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 0,
