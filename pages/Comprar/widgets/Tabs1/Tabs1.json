@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 88,
+  "bottomRow": 94,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
@@ -99,6 +99,51 @@
       "version": 1,
       "widgetId": "d1s2fj97ag",
       "widgetName": "Canvas10"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 790,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "ok0zogwstp",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 830,
+      "minWidth": 450,
+      "mobileBottomRow": 831,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 438,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "20275pp64f",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 438,
+      "tabId": "tabpo1zh1ok0v",
+      "tabName": "Favoritos",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "bkm6p71gbs",
+      "widgetName": "Canvas11"
     }
   ],
   "defaultTab": "Produtos",
@@ -129,8 +174,8 @@
   "mobileRightColumn": 49,
   "mobileTopRow": 83,
   "needsErrorInfo": false,
-  "originalBottomRow": 88,
-  "originalTopRow": 5,
+  "originalBottomRow": 94,
+  "originalTopRow": 11,
   "parentColumnSpace": 6.84375,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -155,9 +200,16 @@
       "label": "Carrinho",
       "positioning": "vertical",
       "widgetId": "d1s2fj97ag"
+    },
+    "tabpo1zh1ok0v": {
+      "id": "tabpo1zh1ok0v",
+      "index": 2,
+      "isVisible": false,
+      "label": "Favoritos",
+      "widgetId": "bkm6p71gbs"
     }
   },
-  "topRow": 5,
+  "topRow": 11,
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "20275pp64f",

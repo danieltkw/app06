@@ -42,6 +42,7 @@
   "columnUpdatedAt": 1728055672246,
   "columnWidthMap": {
     "price": 93,
+    "product_name": 356,
     "quantity": 117,
     "total_price": 87
   },

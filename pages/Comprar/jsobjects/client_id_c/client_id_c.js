@@ -10,7 +10,7 @@ export default {
                 return userID;
             } else {
                 console.log('No valid userID found, running DB query...');
-                const result = await getClientIdFromDB.run();
+                const result = await getClientIdFromDB.run();  // Correctly reference the query here
 
                 if (result && result.length > 0) {
                     const clientId = result[0].client_id;

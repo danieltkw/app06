@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 29,
+  "bottomRow": 47,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonStyle": "PRIMARY_BUTTON",
@@ -32,6 +32,8 @@
   "leftColumn": 50,
   "minWidth": 120,
   "onClick": "{{addToCart.addToCart();}}",
+  "originalBottomRow": 29,
+  "originalTopRow": 24,
   "parentId": "egj9nhnqcw",
   "placement": "CENTER",
   "recaptchaType": "V3",
@@ -44,7 +46,7 @@
     "submit"
   ],
   "text": "Comprar",
-  "topRow": 24,
+  "topRow": 42,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "e4a9mo2vr0",

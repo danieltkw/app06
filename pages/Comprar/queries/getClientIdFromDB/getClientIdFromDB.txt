@@ -1,0 +1,5 @@
+-- getClientIdFromDB
+SELECT vat_number 
+FROM db_users 
+WHERE vat_number = {{appsmith.store.clientVatNumber}};
+
