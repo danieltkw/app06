@@ -1,0 +1,4 @@
+-- updateCartQuantityQuery
+UPDATE db_shop_card
+SET quantity = '{{Table_products.selectedRow.newQuantity}}'
+WHERE vat_number = '{{appsmith.store.clientId}}' AND product_id = '{{Table_products.selectedRow.product_id}}';

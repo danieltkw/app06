@@ -1,27 +1,55 @@
 export default {
     async addToCart() {
-        const selectedProduct = Table_products.selectedRow;
+        const selectedProduct = Table_products.selectedRow;  // Get selected row from the product table
 
-        if (selectedProduct && selectedProduct.Product_ID) {
+        // Log the entire selected row to check its contents
+        console.log('Selected Product Row:', selectedProduct);
+
+        if (selectedProduct && selectedProduct.product_id) {  // Ensure the selected product has a valid product_id
             try {
-                console.log('Selected Product:', selectedProduct);  // Log the selected product data
+                console.log('Product ID:', selectedProduct.product_id);  // Log the product ID being added
+                console.log('Product Name:', selectedProduct.name);  // Log the product name
+                console.log('Price:', selectedProduct.price);  // Log the price of the selected product
 
-                // Insert the selected product into the cart using vat_number
-                await insertCartQuery.run({
-                    vat_number: appsmith.store.clientId,  // Using clientId which is vat_number
-                    product_id: selectedProduct.Product_ID,
-                    product_name: selectedProduct.Name,
-                    quantity: 1,
-                    price: selectedProduct.Price
-                });
+                // Fetch the current cart data
+                const clientId = appsmith.store.clientId;
+                const currentCart = await getCardQuery.run({ vat_number: clientId });
 
-                console.log('Product ID:', selectedProduct.Product_ID);  // Log the product_id being inserted
-                console.log('Product Name:', selectedProduct.Name);  // Log the product name
-                console.log('Price:', selectedProduct.Price);  // Log the price
-                showAlert('Product added to cart successfully!', 'success');
+                // Check if product already exists in the cart
+                const existingProduct = currentCart.find(item => item.product_id === selectedProduct.product_id);
+
+                if (existingProduct) {
+                    // If the product exists, update the quantity
+                    const newQuantity = existingProduct.quantity + 1;
+
+                    await updateCartQuantityQuery.run({
+                        vat_number: clientId,
+                        product_id: selectedProduct.product_id,
+                        newQuantity: newQuantity
+                    });
+
+                    console.log('Updated quantity for product ID:', selectedProduct.product_id, 'New Quantity:', newQuantity);
+                    showAlert('Product quantity updated in cart successfully!', 'success');
+                } else {
+                    // If the product does not exist, insert it
+                    await insertCartQuery.run({
+                        vat_number: clientId,
+                        product_id: selectedProduct.product_id,
+                        product_name: selectedProduct.name,
+                        quantity: 1,
+                        price: selectedProduct.price
+                    });
+
+                    console.log('Inserted new product into cart:', selectedProduct.name);
+                    showAlert('Product added to cart successfully!', 'success');
+                }
+
+                // Refresh the cart after adding/updating a product
+                await getCard();  // Make sure the function getCard() is available and imported properly
+
             } catch (error) {
-                console.error('Error adding product to cart:', error);
-                showAlert('Failed to add product to cart.', 'error');
+                console.error('Error adding/updating product to cart:', error);
+                showAlert('Failed to add/update product to cart.', 'error');
             }
         } else {
             showAlert('Please select a valid product before adding to cart.', 'error');
@@ -31,6 +59,10 @@ export default {
 };
 
 // ------------------------------------------------------------
-// addToCart.js - Logs for debugging product data being passed to the cart
+// addToCart.js - Updated to handle duplicate products by incrementing quantity.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
+
+
+

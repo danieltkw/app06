@@ -1,3 +1,9 @@
 -- insertCartQuery
 INSERT INTO db_shop_card (vat_number, product_id, product_name, quantity, price)
-VALUES ('{{appsmith.store.clientId}}', '{{Table_products.selectedRow.Product_ID}}', '{{Table_products.selectedRow.Name}}', 1, '{{Table_products.selectedRow.Price}}');
+VALUES (
+    '{{appsmith.store.clientId}}', 
+    '{{Table_products.selectedRow.product_id}}', 
+    '{{Table_products.selectedRow.name}}', 
+    1, 
+    '{{Table_products.selectedRow.price}}'
+);

@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "66f13446f75d0d57e7f48b12_0a4e2ee2-8166-4a18-9c0b-41eeb0cd92d5",
-  "id": "Comprar_insertCartQuery",
+  "gitSyncId": "66f13446f75d0d57e7f48b12_e3e0eab8-142f-464c-b328-85cfc0fada9c",
+  "id": "Comprar_updateCartQuantityQuery",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- insertCartQuery\nINSERT INTO db_shop_card (vat_number, product_id, product_name, quantity, price)\nVALUES (\n    '{{appsmith.store.clientId}}', \n    '{{Table_products.selectedRow.product_id}}', \n    '{{Table_products.selectedRow.name}}', \n    1, \n    '{{Table_products.selectedRow.price}}'\n);\n",
+      "body": "-- updateCartQuantityQuery\nUPDATE db_shop_card\nSET quantity = '{{Table_products.selectedRow.newQuantity}}'\nWHERE vat_number = '{{appsmith.store.clientId}}' AND product_id = '{{Table_products.selectedRow.product_id}}';\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -28,7 +28,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "insertCartQuery",
+    "name": "updateCartQuantityQuery",
     "pageId": "Comprar",
     "userSetOnLoad": false
   }

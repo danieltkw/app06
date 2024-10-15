@@ -7,6 +7,7 @@ export default {
                 const cartData = await getCardQuery.run({ vat_number: clientId });  // Fetch cart data using clientId
                 console.log('Cart data:', cartData);  // Log the fetched cart data for debugging
                 table_scard.setData(cartData);  // Populate cart table with data
+                console.log('Cart updated in UI');
             } else {
                 showAlert('Unable to fetch cart. No valid clientId found.', 'error');
             }
@@ -22,5 +23,4 @@ export default {
 // Uses clientId (vat_number) consistently across the app.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
-
 
