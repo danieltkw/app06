@@ -7,3 +7,4 @@ VALUES (
     1, 
     '{{Table_products.selectedRow.price}}'
 );
+

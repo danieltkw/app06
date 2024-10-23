@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "fullyQualifiedName": "productOperations.loadProducts",
     "name": "loadProducts",
     "pageId": "Produtos",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

@@ -337,7 +337,7 @@
   "searchKey": "",
   "serverSidePaginationEnabled": true,
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{ products_operations.loadProducts() }}\n",
+  "tableData": "{{appsmith.store.fetchedProducts}}\n\n",
   "textSize": "0.875rem",
   "topRow": 5,
   "totalRecordsCount": "",
