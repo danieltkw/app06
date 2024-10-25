@@ -22,20 +22,30 @@ export default {
                     // If the product exists, update the quantity
                     storeValue("newQuantity", existingProduct.quantity + 1);
 
-                    await updateCartQuantityQuery.run();
+                    await updateCartQuantityQuery.run({
+                        vat_number: clientId,
+                        product_id: selectedProduct.product_id,
+                        quantity: appsmith.store.newQuantity
+                    });
 
                     console.log('Updated quantity for product ID:', selectedProduct.product_id, 'New Quantity:', appsmith.store.newQuantity);
                     showAlert('Product quantity updated in cart successfully!', 'success');
                 } else {
                     // If the product does not exist, insert it
-                    await insertCartQuery.run();
+                    await insertCartQuery.run({
+                        vat_number: clientId,
+                        product_id: selectedProduct.product_id,
+                        product_name: selectedProduct.name,
+                        quantity: 1,
+                        price: selectedProduct.price
+                    });
 
                     console.log('Inserted new product into cart:', selectedProduct.name);
                     showAlert('Product added to cart successfully!', 'success');
                 }
 
                 // Refresh the cart after adding/updating a product
-                await getCard();  // Make sure the function getCard() is available and imported properly
+                await getCardQuery.run({ vat_number: clientId });  // Fetch cart again to ensure it's up to date
 
             } catch (error) {
                 console.error('Error adding/updating product to cart:', error);
@@ -52,7 +62,6 @@ export default {
 // addToCart.js - Updated to handle duplicate products by incrementing quantity.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
-
 
 
 

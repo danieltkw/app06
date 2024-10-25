@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_a098d1a1-30af-47d7-85aa-e8868a33275c",
+  "id": "Comprar_tabs_control",
+  "unpublishedCollection": {
+    "name": "tabs_control",
+    "pageId": "Comprar",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "defaultTab",
+        "value": "'Produtos'"
+      }
+    ]
+  }
+}
