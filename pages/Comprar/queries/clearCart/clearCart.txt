@@ -1,0 +1,4 @@
+-- clearCart
+-- Removing all products from the cart for a specific vat_number
+DELETE FROM db_shop_card
+WHERE vat_number = '{{appsmith.store.clientId}}';

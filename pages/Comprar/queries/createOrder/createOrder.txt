@@ -1,0 +1,14 @@
+-- createOrder
+-- Create a new order from the products in the cart
+INSERT INTO db_orders (vat_number, items, subtotal, taxes, shipping, total, created)
+SELECT
+    vat_number,
+    JSON_ARRAYAGG(JSON_OBJECT('product_id', product_id, 'product_name', product_name, 'quantity', quantity, 'price', price)),
+    SUM(quantity * price),
+    0,  -- Taxes default to 0 unless specified elsewhere
+    0,  -- Shipping default to 0 unless specified elsewhere
+    SUM(quantity * price),  -- Total is subtotal plus taxes and shipping
+    CURRENT_TIMESTAMP
+FROM db_shop_card
+WHERE vat_number = '{{appsmith.store.clientId}}'
+GROUP BY vat_number;

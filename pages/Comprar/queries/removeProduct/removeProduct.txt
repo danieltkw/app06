@@ -1,0 +1,5 @@
+-- removeProduct
+-- Removing a specific product from the cart
+DELETE FROM db_shop_card
+WHERE vat_number = '{{appsmith.store.clientId}}'
+AND product_id = '{{Table_products.selectedRow.product_id}}';

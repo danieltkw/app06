@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_a081dd7c-24df-470d-90ad-97fcbf84d7ae",
+  "id": "Comprar_createOrderCard",
+  "unpublishedCollection": {
+    "name": "createOrderCard",
+    "pageId": "Comprar",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

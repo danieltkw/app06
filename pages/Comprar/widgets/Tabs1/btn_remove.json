@@ -32,7 +32,7 @@
   "key": "2e3p5ebjwm",
   "leftColumn": 44,
   "minWidth": 120,
-  "onClick": "{{addToCart.addToCart();}}",
+  "onClick": "{{removeProductFromCart.removeProductFromCart();}}",
   "parentColumnSpace": 19.8125,
   "parentId": "d1s2fj97ag",
   "parentRowSpace": 10,
@@ -51,5 +51,5 @@
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "6z1ekk3q3o",
-  "widgetName": "btn_remove_productCopy"
+  "widgetName": "btn_remove"
 }
