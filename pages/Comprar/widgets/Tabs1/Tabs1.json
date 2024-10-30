@@ -144,6 +144,51 @@
       "version": 1,
       "widgetId": "bkm6p71gbs",
       "widgetName": "Canvas11"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 790,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "lzgj0y9mdm",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 830,
+      "minWidth": 450,
+      "mobileBottomRow": 831,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 438,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "20275pp64f",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 438,
+      "tabId": "tab1fvogvrwc7",
+      "tabName": "Pedidos",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "bpmknazj8n",
+      "widgetName": "Canvas12"
     }
   ],
   "defaultTab": "Produtos",
@@ -174,8 +219,8 @@
   "mobileRightColumn": 49,
   "mobileTopRow": 83,
   "needsErrorInfo": false,
-  "originalBottomRow": 87,
-  "originalTopRow": 4,
+  "originalBottomRow": 38,
+  "originalTopRow": 5,
   "parentColumnSpace": 6.84375,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -187,15 +232,25 @@
   "tabsObj": {
     "tab1": {
       "id": "tab1",
-      "index": 0,
+      "index": 1,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Produtos",
       "positioning": "vertical",
       "widgetId": "uij7saxfjq"
     },
+    "tab1fvogvrwc7": {
+      "id": "tab1fvogvrwc7",
+      "index": 0,
+      "isDuplicateLabel": false,
+      "isVisible": true,
+      "label": "Pedidos",
+      "widgetId": "bpmknazj8n"
+    },
     "tab2": {
       "id": "tab2",
-      "index": 1,
+      "index": 2,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Carrinho",
       "positioning": "vertical",
@@ -203,7 +258,8 @@
     },
     "tabpo1zh1ok0v": {
       "id": "tabpo1zh1ok0v",
-      "index": 2,
+      "index": 3,
+      "isDuplicateLabel": false,
       "isVisible": false,
       "label": "Favoritos",
       "widgetId": "bkm6p71gbs"

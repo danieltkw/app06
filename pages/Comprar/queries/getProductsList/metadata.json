@@ -1,16 +1,16 @@
 {
-  "gitSyncId": "66f13446f75d0d57e7f48b12_64a6f472-4e1e-40fd-9061-0ad4f8cf1e04",
-  "id": "Comprar_getClientIdFromDB",
+  "gitSyncId": "66f13446f75d0d57e7f48b12_40f571df-6590-4f28-a6cf-06c7b030a8a1",
+  "id": "Comprar_getProductsList",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- getClientIdFromDB\nSELECT * \nFROM db_users \nWHERE vat_number = '{{appsmith.store.clientId}}';\n\n\n",
+      "body": "-- getProducts \nSELECT product_id, name, category, price, total_stock, warehouse_location \nFROM db_products\nWHERE category = {{appsmith.store.sel_status}} OR {{appsmith.store.sel_status}} = '';\n-- ",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ],
       "timeoutInMillisecond": 10000
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
-    "name": "getClientIdFromDB",
+    "executeOnLoad": false,
+    "name": "getProductsList",
     "pageId": "Comprar",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }
