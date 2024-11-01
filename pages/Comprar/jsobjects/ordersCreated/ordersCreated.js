@@ -35,7 +35,7 @@ export default {
                     product_name: item.product_name,
                     quantity: item.quantity,
                     price: item.price
-                })) ),
+                }))),
                 subtotal: cartData.reduce((acc, item) => acc + (item.quantity * item.price), 0),
                 taxes: 0,  // Default to 0 unless specified elsewhere
                 shipping: 0,  // Default to 0 unless specified elsewhere
@@ -90,10 +90,22 @@ export default {
         try {
             const orders = await getOrders.run();
             if (orders && orders.length > 0) {
-                Table_productsCopy.setData(orders); // Set the data in the orders table
-                console.log('Orders fetched and set in the table:', orders);
+                // Alter only the 'created' field for display purposes
+                const formattedOrders = orders.map(order => ({
+                    ...order,
+                    created: order.created ? new Date(order.created).toLocaleString('pt-PT', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit'
+                    }) : order.created
+                }));
+                Table_products.setData(formattedOrders); // Set the data in the orders table
+                console.log('Orders fetched and set in the table:', formattedOrders);
             } else {
-                Table_productsCopy.setData([]); // Clear the table if no orders are found
+                Table_products.setData([]); // Clear the table if no orders are found
                 console.error('No orders found for the client.');
             }
         } catch (error) {
@@ -105,7 +117,9 @@ export default {
 
 // ------------------------------------------------------------
 // createOrder.js - Handles creating an order from the cart, clearing the cart afterwards, and refreshing the orders list.
-// printInvoice.js - Handles opening an external website for the invoice.
-// ordersCreated.js - Handles fetching and displaying orders in the table.
+// End of function: createOrder
+// End of function: printInvoice
+// End of function: ordersCreated
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
