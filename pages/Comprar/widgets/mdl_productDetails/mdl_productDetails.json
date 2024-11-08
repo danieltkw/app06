@@ -7,7 +7,7 @@
   "canOutsideClickClose": true,
   "children": [
     {
-      "bottomRow": 470,
+      "bottomRow": 320,
       "canExtend": true,
       "detachFromLayout": true,
       "displayName": "Canvas",

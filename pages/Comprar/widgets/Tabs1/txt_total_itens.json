@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 12,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -32,7 +32,7 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "originalBottomRow": 8,
+  "originalBottomRow": 12,
   "originalTopRow": 0,
   "overflow": "NONE",
   "parentColumnSpace": 23.578125,
@@ -47,7 +47,7 @@
     "label"
   ],
   "shouldTruncate": false,
-  "text": "Itens: {{appsmith.store.totalItems || 'N/A'}}\n\n",
+  "text": "Itens: {{ appsmith.store.totalItems || 0 }}\n\n\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 0,

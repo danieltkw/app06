@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 8,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -32,7 +32,7 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "originalBottomRow": 5,
+  "originalBottomRow": 8,
   "originalTopRow": 0,
   "overflow": "NONE",
   "parentColumnSpace": 23.578125,
@@ -47,7 +47,7 @@
     "label"
   ],
   "shouldTruncate": false,
-  "text": "Total: - {{appsmith.store.clientId || 'N/A'}}\n",
+  "text": "Total: - {{ appsmith.store.totalValue ? appsmith.store.totalValue.toLocaleString('pt-PT', { style: 'currency', currency: 'EUR' }) : '0,00 €' }}\n\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 0,

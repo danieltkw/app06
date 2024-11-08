@@ -2,50 +2,29 @@ export default {
     async addToCart() {
         const selectedProduct = Table_products.selectedRow;  // Get selected row from the product table
 
-        // Log the entire selected row to check its contents
-        console.log('Selected Product Row:', selectedProduct);
-
         if (selectedProduct && selectedProduct.product_id) {  // Ensure the selected product has a valid product_id
             try {
-                console.log('Product ID:', selectedProduct.product_id);  // Log the product ID being added
-                console.log('Product Name:', selectedProduct.name);  // Log the product name
-                console.log('Price:', selectedProduct.price);  // Log the price of the selected product
+                console.log('Selected Product Row:', selectedProduct);
 
-                // Fetch the current cart data
-                const clientId = appsmith.store.clientId;
-                const currentCart = await getCardQuery.run({ vat_number: clientId });
+                // Sanitize the price by removing any currency symbols and commas
+                const sanitizedPrice = parseFloat(selectedProduct.price.replace(/[€$,]/g, '').replace(',', '.'));
 
-                // Check if product already exists in the cart
-                const existingProduct = currentCart.find(item => item.product_id === selectedProduct.product_id);
-
-                if (existingProduct) {
-                    // If the product exists, update the quantity
-                    storeValue("newQuantity", existingProduct.quantity + 1);
-
-                    await updateCartQuantityQuery.run({
-                        vat_number: clientId,
-                        product_id: selectedProduct.product_id,
-                        quantity: appsmith.store.newQuantity
-                    });
-
-                    console.log('Updated quantity for product ID:', selectedProduct.product_id, 'New Quantity:', appsmith.store.newQuantity);
-                    showAlert('Product quantity updated in cart successfully!', 'success');
-                } else {
-                    // If the product does not exist, insert it
-                    await insertCartQuery.run({
-                        vat_number: clientId,
-                        product_id: selectedProduct.product_id,
-                        product_name: selectedProduct.name,
-                        quantity: 1,
-                        price: selectedProduct.price
-                    });
-
-                    console.log('Inserted new product into cart:', selectedProduct.name);
-                    showAlert('Product added to cart successfully!', 'success');
+                if (isNaN(sanitizedPrice)) {
+                    throw new Error('Invalid price value');
                 }
 
-                // Refresh the cart after adding/updating a product
-                await getCardQuery.run({ vat_number: clientId });  // Fetch cart again to ensure it's up to date
+                console.log('Sanitized Price:', sanitizedPrice); // Log the sanitized price
+
+                // Store sanitized price as a variable in Appsmith's store for SQL to use
+                storeValue("sanitizedPrice", sanitizedPrice);
+
+                // Run insertCartQuery after setting the sanitized price in Appsmith store
+                await insertCartQuery.run();
+
+                showAlert('Product added to cart successfully!', 'success');
+                
+                // Refresh the cart to show updated data
+                await getCardQuery.run({ vat_number: appsmith.store.clientId });
 
             } catch (error) {
                 console.error('Error adding/updating product to cart:', error);
@@ -59,9 +38,16 @@ export default {
 };
 
 // ------------------------------------------------------------
-// addToCart.js - Updated to handle duplicate products by incrementing quantity.
+// addToCart.js - Sanitizes product price by removing symbols and storing it in Appsmith store for SQL.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 

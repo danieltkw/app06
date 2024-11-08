@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "fullyQualifiedName": "getProducts.getProducts",
     "name": "getProducts",
     "pageId": "Comprar",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

@@ -21,13 +21,19 @@ export default {
             console.error('Error fetching cart data:', error);
             showAlert('Error fetching cart data.', 'error');
         }
+    },
+
+    // Initialize the cart on page load
+    async initializeCartOnLoad() {
+        await this.getCard();  // Automatically load the cart data
     }
 };
 
 // ------------------------------------------------------------
 // getCard.js - Fetches user's cart data, displays it in cart table, and stores total number of items.
-// Uses clientId (vat_number) consistently across the app.
+// Uses clientId (vat_number) consistently across the app. Adds auto-refresh for cart on page load.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
 
 

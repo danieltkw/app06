@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "66f13446f75d0d57e7f48b12_b14ffb12-a4ef-4ef7-9e84-69b19c5595f0",
-  "id": "Comprar_ordersCreated.printInvoice",
+  "gitSyncId": "66f13446f75d0d57e7f48b12_52553e72-cae8-4037-be4e-5f254d551372",
+  "id": "Comprar_ordersCreated.getProducts",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -23,8 +23,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "ordersCreated.printInvoice",
-    "name": "printInvoice",
+    "fullyQualifiedName": "ordersCreated.getProducts",
+    "name": "getProducts",
     "pageId": "Comprar",
     "userSetOnLoad": false
   }

@@ -1,12 +1,5 @@
 -- insertCartQuery
 INSERT INTO db_shop_card (vat_number, product_id, product_name, quantity, price)
-SELECT '{{appsmith.store.clientId}}', '{{Table_products.selectedRow.product_id}}', '{{Table_products.selectedRow.name}}', 1, '{{Table_products.selectedRow.price}}'
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM db_shop_card
-    WHERE vat_number = '{{appsmith.store.clientId}}'
-    AND product_id = '{{Table_products.selectedRow.product_id}}'
-);
-
-
+VALUES ('{{appsmith.store.clientId}}', '{{Table_products.selectedRow.product_id}}', '{{Table_products.selectedRow.name}}', 1, '{{appsmith.store.sanitizedPrice}}')
+ON DUPLICATE KEY UPDATE quantity = quantity + 1;
 

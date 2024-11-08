@@ -32,7 +32,7 @@
   "key": "2e3p5ebjwm",
   "leftColumn": 54,
   "minWidth": 120,
-  "onClick": "{{removeProductFromCart.clearCart();}}",
+  "onClick": "{{removeProductFromCart.clearCart()}}",
   "parentColumnSpace": 19.8125,
   "parentId": "d1s2fj97ag",
   "parentRowSpace": 10,
