@@ -3,19 +3,19 @@ export default {
     async createOrder() {
         try {
             const clientId = appsmith.store.clientId;
-            console.log('Creating order for client ID:', clientId);
+            console.log('Pedido para o ID:', clientId);
 
             // Fetch the current cart data to verify
             const cartData = await getCardQuery.run({ vat_number: clientId });
             if (!cartData || cartData.length === 0) {
-                showAlert('No items in the cart to create an order.', 'error');
+                showAlert('Faltam itens ao carrinho.', 'error');
                 return;
             }
 
             // Fetch client information
             const clientData = await getClientIdFromDB.run({ vat_number: clientId });
             if (!clientData || clientData.length === 0) {
-                showAlert('Client information not found. Cannot create order.', 'error');
+                showAlert('Pedido nao feito, erro no ID cliente.', 'error');
                 return;
             }
             const clientInfo = clientData[0];
@@ -51,17 +51,17 @@ export default {
                 address_id: clientInfo.address_id || null
             });
 
-            showAlert('Order created successfully!', 'success');
+            showAlert('Pedido feito!', 'success');
 
             // Clear the cart after the order is successfully created
             await clearCart.run({ vat_number: clientId });
-            console.log('Cart cleared for client ID:', clientId);
+            console.log('Carrinho limpo:', clientId);
 
             // Refresh the cart to reflect the cleared state
             await getCardQuery.run({ vat_number: clientId });
         } catch (error) {
-            console.error('Error creating order:', error);
-            showAlert('Failed to create order. Please try again.', 'error');
+            console.error('Erro criando pedido:', error);
+            showAlert('Falhou. Tente novamente.', 'error');
         }
     }
 };

@@ -30,7 +30,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "2e3p5ebjwm",
-  "leftColumn": 54,
+  "leftColumn": 43,
   "minWidth": 120,
   "onClick": "{{addToCart.addToCart();}}",
   "parentColumnSpace": 19.8125,

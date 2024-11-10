@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 27,
+  "bottomRow": 99,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -55,7 +55,7 @@
   "columnWidthMap": {
     "created": 172,
     "delivery_status": 116,
-    "order_id": 111,
+    "order_id": 108,
     "shipping_address": 184,
     "total": 95
   },

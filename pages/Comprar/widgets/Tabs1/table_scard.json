@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 91,
+  "bottomRow": 94,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -42,7 +42,7 @@
   "columnUpdatedAt": 1729874477552,
   "columnWidthMap": {
     "price": 93,
-    "product_name": 356,
+    "product_name": 190,
     "quantity": 117,
     "total_price": 87
   },
@@ -113,8 +113,8 @@
   "mobileRightColumn": 32,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 91,
-  "originalTopRow": 12,
+  "originalBottomRow": 94,
+  "originalTopRow": 15,
   "parentColumnSpace": 6.53125,
   "parentId": "d1s2fj97ag",
   "parentRowSpace": 10,
@@ -364,7 +364,7 @@
   "searchKey": "",
   "tableData": "{{getCardQuery.data}}",
   "textSize": "0.875rem",
-  "topRow": 12,
+  "topRow": 15,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
