@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "name": "getReturns",
     "pageId": "Dashboard",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

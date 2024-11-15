@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "66f13446f75d0d57e7f48b12_fa2e5495-ab6e-4fcf-9944-2a3cecce58c1",
-  "id": "Dashboard_test",
+  "gitSyncId": "66f13446f75d0d57e7f48b12_2c2aca00-6cd4-49a6-9f0c-a3abaa19c5ea",
+  "id": "Clientes_getClientIdFromDB",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * \nFROM db_orders \nWHERE vat_number = '307277003';\n",
+      "body": "-- getClientIdFromDB - Fetch the VAT (vat_number) from db_users\nSELECT vat_number AS client_id \nFROM db_users \nWHERE vat_number = {{appsmith.user.id}};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,10 +22,14 @@
       "name": "doadmin",
       "pluginId": "mysql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "executeOnLoad": false,
-    "name": "test",
-    "pageId": "Dashboard",
+    "name": "getClientIdFromDB",
+    "pageId": "Clientes",
     "userSetOnLoad": false
   }
 }

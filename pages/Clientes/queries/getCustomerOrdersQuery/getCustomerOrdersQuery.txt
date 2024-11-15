@@ -6,5 +6,5 @@ SELECT
   o.total
 FROM db_orders o
 WHERE o.vat_number = {{this.params.vatNumber}};
-
+-- getCustomerOrdersQuery sql query
 

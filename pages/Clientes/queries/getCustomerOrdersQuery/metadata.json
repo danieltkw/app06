@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- getCustomerOrdersQuery\nSELECT \n  o.order_id, \n  o.created, \n  JSON_LENGTH(o.items) AS items_count, \n  o.total\nFROM db_orders o\nWHERE o.vat_number = {{this.params.vatNumber}};\n\n\n",
+      "body": "-- getCustomerOrdersQuery\nSELECT \n  o.order_id, \n  o.created, \n  JSON_LENGTH(o.items) AS items_count, \n  o.total\nFROM db_orders o\nWHERE o.vat_number = {{this.params.vatNumber}};\n-- getCustomerOrdersQuery sql query\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

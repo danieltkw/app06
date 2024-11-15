@@ -10,7 +10,7 @@ SELECT
   updated_at         -- Last updated timestamp
 FROM db_users        -- `db_users` is the table where customer data is stored
 WHERE role = 'client';  -- Ensure that only customers (not admin users) are fetched
-
+-- getCustomers sql query
 
 
 

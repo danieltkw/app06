@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "name": "getRevenueByMonth",
     "pageId": "Dashboard",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }
