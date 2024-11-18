@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_4469b92a-8b9f-451d-82fb-b301ea3c96c9",
+  "id": "Clientes_customerManager",
+  "unpublishedCollection": {
+    "name": "customerManager",
+    "pageId": "Clientes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

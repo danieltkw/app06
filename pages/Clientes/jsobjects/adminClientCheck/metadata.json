@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_8fc02bb0-50c9-42f1-97d1-9660f08662ef",
+  "id": "Clientes_adminClientCheck",
+  "unpublishedCollection": {
+    "name": "adminClientCheck",
+    "pageId": "Clientes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
