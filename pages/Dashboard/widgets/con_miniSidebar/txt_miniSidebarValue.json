@@ -40,7 +40,7 @@
     "label"
   ],
   "shouldTruncate": false,
-  "text": "{{(dashboard_metrics.dashboardMetrics()?.totalOrderValue || 0) + ' €'}}",
+  "text": "{{dashboard_metrics.dashboardMetrics.data?.totalOrderValue || 0 }} €",
   "textAlign": "LEFT",
   "textColor": "#fafafa",
   "topRow": 0,
