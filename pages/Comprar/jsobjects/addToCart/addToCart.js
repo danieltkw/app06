@@ -1,46 +1,62 @@
 export default {
     async addToCart() {
-        const selectedProduct = Table_products.selectedRow;  // Get selected row from the product table
+        try {
+            const selectedProduct = Table_products.selectedRow; // Get selected row from the product table
 
-        if (selectedProduct && selectedProduct.product_id) {  // Ensure the selected product has a valid product_id
-            try {
-                console.log('Selected Product Row:', selectedProduct);
-
-                // Sanitize the price by removing any currency symbols and commas
-                const sanitizedPrice = parseFloat(selectedProduct.price.replace(/[€$,]/g, '').replace(',', '.'));
-
-                if (isNaN(sanitizedPrice)) {
-                    throw new Error('Invalid price value');
-                }
-
-                console.log('Sanitized Price:', sanitizedPrice); // Log the sanitized price
-
-                // Store sanitized price as a variable in Appsmith's store for SQL to use
-                storeValue("sanitizedPrice", sanitizedPrice);
-
-                // Run insertCartQuery after setting the sanitized price in Appsmith store
-                await insertCartQuery.run();
-
-                showAlert('Product added to cart successfully!', 'success');
-                
-                // Refresh the cart to show updated data
-                await getCardQuery.run({ vat_number: appsmith.store.clientId });
-
-            } catch (error) {
-                console.error('Error adding/updating product to cart:', error);
-                showAlert('Failed to add/update product to cart.', 'error');
+            // Check if the selected product is valid and has a valid `product_id`
+            if (!selectedProduct || !selectedProduct.product_id || isNaN(selectedProduct.product_id)) {
+                showAlert("O produto selecionado não possui um ID válido.", "error");
+                console.error("Invalid product ID:", selectedProduct);
+                return;
             }
-        } else {
-            showAlert('Please select a valid product before adding to cart.', 'error');
-            console.log('No valid product selected or product_id is null.');
+
+            console.log("Selected Product:", selectedProduct);
+
+            // Sanitize the price by removing symbols, commas, and formatting
+            const sanitizedPrice = parseFloat(
+                (selectedProduct.price || "0")
+                    .toString()
+                    .replace(/[€$,]/g, "")
+                    .replace(",", ".")
+            );
+
+            if (isNaN(sanitizedPrice) || sanitizedPrice <= 0) {
+                showAlert("O preço do produto selecionado é inválido.", "error");
+                console.error("Invalid product price:", selectedProduct.price);
+                return;
+            }
+
+            console.log("Sanitized Price:", sanitizedPrice);
+
+            // Store sanitized price and other variables as a key-value pair in Appsmith store
+            await storeValue("sanitizedPrice", sanitizedPrice);
+            await storeValue("productID", selectedProduct.product_id);
+            await storeValue("productName", selectedProduct.name);
+
+            // Run the query to insert the product into the cart
+            await insertCartQuery.run();
+
+            // Show success alert
+            showAlert("Produto adicionado ao carrinho com sucesso!", "success");
+
+            // Refresh the cart to show the updated data
+            await getCardQuery.run({ vat_number: appsmith.store.clientId });
+        } catch (error) {
+            console.error("Erro ao adicionar produto ao carrinho:", error);
+            showAlert("Erro ao adicionar produto ao carrinho.", "error");
         }
     }
 };
 
 // ------------------------------------------------------------
-// addToCart.js - Sanitizes product price by removing symbols and storing it in Appsmith store for SQL.
+// addToCart.js - Handles adding a product to the cart, sanitizing price, and refreshing the cart.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
+
+
+
+
 
 
 

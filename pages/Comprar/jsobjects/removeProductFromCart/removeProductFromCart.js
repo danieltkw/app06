@@ -11,14 +11,14 @@ export default {
                     product_id: selectedProduct.product_id,
                 });
 
-                showAlert('Product removed from cart successfully!', 'success');
+                showAlert('Produto removido!', 'success');
                 await getCardQuery.run({ vat_number: appsmith.store.clientId });  // Refresh cart
             } catch (error) {
                 console.error('Error removing product from cart:', error);
-                showAlert('Failed to remove product from cart.', 'error');
+                showAlert('Erro em remover o produto', 'error');
             }
         } else {
-            showAlert('Please select a product to remove from cart.', 'error');
+            showAlert('Selecione um produto', 'error');
         }
     },
 
@@ -31,11 +31,11 @@ export default {
                 vat_number: appsmith.store.clientId,
             });
 
-            showAlert('Cart cleared successfully!', 'success');
+            showAlert('Carrinho esvaziado!', 'success');
             await getCardQuery.run({ vat_number: appsmith.store.clientId });  // Refresh cart
         } catch (error) {
             console.error('Error clearing cart:', error);
-            showAlert('Failed to clear cart.', 'error');
+            showAlert('Falha em limpar carrinho', 'error');
         }
     }
 };

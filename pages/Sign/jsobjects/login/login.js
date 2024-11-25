@@ -5,7 +5,7 @@ export default {
         
         console.log('Entered Email:', email);
         console.log('Entered Password:', password);
-        showAlert('SignIn function started');
+        //showAlert('SignIn function started');
 
         try {
             const result = await SignIn_sql.run({ email });
@@ -15,13 +15,13 @@ export default {
                 const storedHash = user.password_hash;
 
                 console.log('User found:', user);
-                console.log('Stored Hash:', storedHash);
-                showAlert('Stored Hash: ' + storedHash);
+                // console.log('Stored Hash:', storedHash);
+               // showAlert('Stored Hash: ' + storedHash);
 
                 const isPasswordValid = dcodeIO.bcrypt.compareSync(password, storedHash);
 
-                console.log('Password Comparison Result:', isPasswordValid);
-                showAlert('Password comparison result: ' + isPasswordValid);
+                // console.log('Password Comparison Result:', isPasswordValid);
+                // showAlert('Password comparison result: ' + isPasswordValid);
 
                 if (isPasswordValid) {
                     showAlert('Login Successful!', 'success');

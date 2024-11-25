@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66f13446f75d0d57e7f48b12_9d3c5a86-a259-4af1-854a-22948adb07a8",
+  "id": "Comprar_fuzzyMatch",
+  "unpublishedCollection": {
+    "name": "fuzzyMatch",
+    "pageId": "Comprar",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

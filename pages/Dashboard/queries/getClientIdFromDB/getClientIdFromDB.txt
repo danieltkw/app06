@@ -1,7 +1,12 @@
--- getClientIdFromDB - Fetch the VAT (vat_number) from db_users
-SELECT vat_number AS client_id 
-FROM db_users 
-WHERE vat_number = {{appsmith.user.id}};
+-- getClientIdFromDB - Fetch user data based on the stored user ID
+SELECT 
+  vat_number AS client_id,
+  role
+FROM 
+  db_users 
+WHERE 
+  vat_number = '{{appsmith.store.userID}}';
+
 
 
 

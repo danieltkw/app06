@@ -1,27 +1,31 @@
 export default {
     async getProducts() {
-        let products = [];
         try {
-            const result = await getProductsQuery.run(); // Fetch products using the query defined above
-            products = result.map(p => {
-                return {
-                    product_id: p.product_id, 
-                    name: p.name,
-                    SKU: p.sku,
-                    category: p.category || 'N/A',
-                    price: p.price.toLocaleString('pt-PT', { style: 'currency', currency: 'EUR' }),
-                    stock: p.total_stock
-                };
-            });
-            Table_products.setData(products); // Use setData to populate the table widget
+            const result = await getProductsQuery.run(); // Fetch product data
+
+            const products = result.map((p) => ({
+                Product_ID: p.product_id,
+                Name: p.name,
+                SKU: p.sku,
+                Category: p.category || "N/A",
+                PriceRaw: parseFloat(p.price || 0), // Raw price as float
+                Price: parseFloat(p.price || 0).toLocaleString("pt-PT", {
+                    style: "currency",
+                    currency: "EUR",
+                }), // Formatted price for display
+                Stock: p.total_stock,
+            }));
+
+            Table_products.setData(products); // Set product table data
         } catch (error) {
-            console.error('Error fetching products:', error);
+            console.error("Error fetching products:", error);
+            showAlert("Erro ao buscar produtos.", "error");
         }
     }
 };
 
 // ------------------------------------------------------------
-// This file fetches products from the database and populates the table with product data.
-// File name: getProducts.js
-// Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
+// getProducts.js - Fetches and formats product data.
 // ------------------------------------------------------------
+
+

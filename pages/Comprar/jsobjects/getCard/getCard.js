@@ -1,47 +1,75 @@
 export default {
     async getCard() {
         try {
-            const clientId = await client_id_c.getClientId();  // Fetch clientId (vat_number)
-            console.log('Fetched clientId:', clientId);  // Log the clientId
-            
-            if (clientId) {
-                const cartData = await getCardQuery.run({ vat_number: clientId });  // Fetch cart data using clientId
-                console.log('Fetched cart data:', cartData);  // Log the fetched cart data for debugging
-                
-                // Check if cart data is empty or null
-                if (!cartData || cartData.length === 0) {
-                    console.warn('No cart data found for client:', clientId);
-                }
+            const clientId = await client_id_c.getClientId(); // Fetch clientId (vat_number)
 
-                table_scard.setData(cartData);  // Populate cart table with data
-                
-                // Calculate and store total number of items in the cart
-                const totalItems = cartData.reduce((acc, item) => acc + item.quantity, 0);
-                storeValue('totalItems', totalItems);  // Store total number of items in Appsmith store
-                console.log('Total items in cart:', totalItems);
-                
-                console.log('Cart data updated in UI.');
-            } else {
-                showAlert('Unable to fetch cart. No valid clientId found.', 'error');
+            if (!clientId) {
+                showAlert("Nenhum ID de cliente encontrado.", "error");
+                return;
             }
-        } catch (error) {
-            console.error('Error fetching cart data:', error);
-            showAlert('Error fetching cart data.', 'error');
-        }
-    },
 
-    // Initialize the cart on page load
-    async initializeCartOnLoad() {
-        console.log('Initializing cart data on page load...');
-        await this.getCard();  // Automatically load the cart data
+            const cartData = await getCardQuery.run({ vat_number: clientId }); // Fetch cart data
+            const productsData = getProductsQuery?.data || []; // Fallback if products data is not loaded
+
+            if (!Array.isArray(productsData) || productsData.length === 0) {
+                console.error("getProductsQuery.data is empty or invalid:", productsData);
+                showAlert("Erro ao buscar produtos. Verifique os dados da tabela.", "error");
+                return;
+            }
+
+            // Match cart items with product names using fuzzyMatch
+            const sanitizedCartData = cartData.map((item) => {
+                const bestMatch = productsData.reduce((best, product) => {
+                    const similarity = fuzzyMatch.fuzzyMatch(
+                        item.product_name || "",
+                        product.name || ""
+                    );
+
+                    return similarity > best.similarity
+                        ? { product, similarity }
+                        : best;
+                }, { product: {}, similarity: 0 });
+
+                return {
+                    ...item,
+                    ProductName: bestMatch.product.name || "Desconhecido",
+                    PriceFormatted: parseFloat(item.price || 0).toLocaleString("pt-PT", {
+                        style: "currency",
+                        currency: "EUR",
+                    }),
+                };
+            });
+
+            table_scard.setData(sanitizedCartData); // Update table with sanitized data
+
+            // Calculate total value
+            const totalValue = sanitizedCartData.reduce(
+                (acc, item) => acc + (item.quantity || 0) * parseFloat(item.price || 0),
+                0
+            );
+
+            await storeValue(
+                "totalValue",
+                totalValue.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })
+            );
+
+            console.log("Updated sanitized cart data:", sanitizedCartData);
+        } catch (error) {
+            console.error("Erro ao buscar dados do carrinho:", error);
+            showAlert("Erro ao buscar o carrinho.", "error");
+        }
     }
 };
+// File: getCard.js
 
-// ------------------------------------------------------------
-// getCard.js - Fetches user's cart data, displays it in cart table, and stores total number of items.
-// Uses clientId (vat_number) consistently across the app. Adds auto-refresh for cart on page load.
-// Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
-// ------------------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 

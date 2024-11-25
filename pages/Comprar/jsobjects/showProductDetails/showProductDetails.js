@@ -6,10 +6,10 @@ export default {
                 await getProductDetailsQuery.run(); // Run the query to fetch product details
                 showModal('mdl_productDetails'); // Show the product details modal after fetching
             } catch (error) {
-                showAlert('Failed to fetch product details.', 'error');
+                showAlert('Falha em atualizar detalhes', 'error');
             }
         } else {
-            showAlert('Please select a product to view details.', 'info');
+            showAlert('Selecione um produto para detalhar', 'info');
         }
     }
 };

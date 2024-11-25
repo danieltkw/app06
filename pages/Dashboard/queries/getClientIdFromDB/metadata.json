@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- getClientIdFromDB - Fetch the VAT (vat_number) from db_users\nSELECT vat_number AS client_id \nFROM db_users \nWHERE vat_number = {{appsmith.user.id}};\n\n\n\n",
+      "body": "-- getClientIdFromDB - Fetch user data based on the stored user ID\nSELECT \n  vat_number AS client_id,\n  role\nFROM \n  db_users \nWHERE \n  vat_number = '{{appsmith.store.userID}}';\n\n\n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
