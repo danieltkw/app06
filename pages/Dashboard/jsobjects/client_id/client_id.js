@@ -37,11 +37,13 @@ export default {
             console.log('No valid clientId found in store, fetching from DB or default...');
             return await this.fetchAndSetClientId();  // Fetch and set clientId if not available
         }
-    }
+    },
+
+    
 };
 
 // ------------------------------------------------------------
-// client_id.js - Fetching and logging userID/clientId with enhanced error handling
+// client_id.js - Fetching, logging, and clearing userID/clientId with enhanced error handling
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
 

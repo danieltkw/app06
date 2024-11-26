@@ -1,5 +1,6 @@
 -- insertCartQuery
 INSERT INTO db_shop_card (vat_number, product_id, product_name, quantity, price)
-VALUES ('{{appsmith.store.clientId}}', '{{Table_products.selectedRow.product_id}}', '{{Table_products.selectedRow.name}}', 1, '{{appsmith.store.sanitizedPrice}}')
-ON DUPLICATE KEY UPDATE quantity = quantity + 1;
-
+VALUES ('{{appsmith.store.clientId}}', '{{appsmith.store.productID}}', '{{appsmith.store.productName}}', 1, '{{appsmith.store.sanitizedPrice}}')
+ON DUPLICATE KEY UPDATE 
+    quantity = quantity + VALUES(quantity), 
+    price = VALUES(price);

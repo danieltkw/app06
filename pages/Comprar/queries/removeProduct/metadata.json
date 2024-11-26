@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- removeProduct\n-- Removing a specific product from the cart\nDELETE FROM db_shop_card\nWHERE vat_number = '{{appsmith.store.clientId}}'\nAND product_id = '{{Table_products.selectedRow.product_id}}';\n",
+      "body": "-- removeProduct\nDELETE FROM db_shop_card\nWHERE vat_number = '{{appsmith.store.clientId}}'\nAND product_id = '{{table_scard.selectedRow.product_id}}';\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

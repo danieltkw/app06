@@ -1,57 +1,81 @@
 export default {
     async addToCart() {
         try {
-            const selectedProduct = Table_products.selectedRow; // Get selected row from the product table
+            const selectedProduct = Table_products.selectedRow;
 
-            // Check if the selected product is valid and has a valid `product_id`
-            if (!selectedProduct || !selectedProduct.product_id || isNaN(selectedProduct.product_id)) {
+            // Get product ID and ensure it is a valid integer
+            const productId = parseInt(selectedProduct?.product_id || selectedProduct?.Product_ID, 10);
+            if (isNaN(productId) || productId <= 0) {
                 showAlert("O produto selecionado não possui um ID válido.", "error");
-                console.error("Invalid product ID:", selectedProduct);
+                console.error("Invalid product ID:", productId);
                 return;
             }
 
-            console.log("Selected Product:", selectedProduct);
-
-            // Sanitize the price by removing symbols, commas, and formatting
+            // Get price and ensure it is a valid float
             const sanitizedPrice = parseFloat(
-                (selectedProduct.price || "0")
+                (selectedProduct.price || selectedProduct.PriceRaw || "0")
                     .toString()
                     .replace(/[€$,]/g, "")
                     .replace(",", ".")
             );
-
             if (isNaN(sanitizedPrice) || sanitizedPrice <= 0) {
                 showAlert("O preço do produto selecionado é inválido.", "error");
-                console.error("Invalid product price:", selectedProduct.price);
+                console.error("Invalid product price:", sanitizedPrice);
                 return;
             }
 
-            console.log("Sanitized Price:", sanitizedPrice);
+            // Get product name and ensure it is not empty
+            const productName = selectedProduct.name || selectedProduct.Name || "Unknown Product";
+            if (!productName) {
+                showAlert("O nome do produto está vazio.", "error");
+                console.error("Invalid product name:", productName);
+                return;
+            }
 
-            // Store sanitized price and other variables as a key-value pair in Appsmith store
+            // Get VAT number and ensure it exists
+            const vatNumber = appsmith.store.clientId;
+            if (!vatNumber) {
+                showAlert("Erro: Nenhum cliente selecionado.", "error");
+                console.error("VAT number is missing");
+                return;
+            }
+
+            // Log debug information
+            console.log("Executing insertCartQuery with values:", {
+                vat_number: vatNumber,
+                product_id: productId,
+                product_name: productName,
+                quantity: 1,
+                price: sanitizedPrice,
+            });
+
+            // Store values in Appsmith store
             await storeValue("sanitizedPrice", sanitizedPrice);
-            await storeValue("productID", selectedProduct.product_id);
-            await storeValue("productName", selectedProduct.name);
+            await storeValue("productID", productId);
+            await storeValue("productName", productName);
 
-            // Run the query to insert the product into the cart
+            // Execute the query
             await insertCartQuery.run();
 
             // Show success alert
             showAlert("Produto adicionado ao carrinho com sucesso!", "success");
 
-            // Refresh the cart to show the updated data
-            await getCardQuery.run({ vat_number: appsmith.store.clientId });
+            // Refresh cart data
+            await getCardQuery.run({ vat_number: vatNumber });
         } catch (error) {
             console.error("Erro ao adicionar produto ao carrinho:", error);
+            if (error?.message) {
+                console.error("SQL Error:", error.message);
+            }
             showAlert("Erro ao adicionar produto ao carrinho.", "error");
         }
     }
 };
 
-// ------------------------------------------------------------
-// addToCart.js - Handles adding a product to the cart, sanitizing price, and refreshing the cart.
-// Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
-// ------------------------------------------------------------
+
+
+
+
 
 
 

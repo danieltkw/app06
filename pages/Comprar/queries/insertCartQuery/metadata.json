@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- insertCartQuery\nINSERT INTO db_shop_card (vat_number, product_id, product_name, quantity, price)\nVALUES ('{{appsmith.store.clientId}}', '{{Table_products.selectedRow.product_id}}', '{{Table_products.selectedRow.name}}', 1, '{{appsmith.store.sanitizedPrice}}')\nON DUPLICATE KEY UPDATE quantity = quantity + 1;\n\n",
+      "body": "-- insertCartQuery\nINSERT INTO db_shop_card (vat_number, product_id, product_name, quantity, price)\nVALUES ('{{appsmith.store.clientId}}', '{{appsmith.store.productID}}', '{{appsmith.store.productName}}', 1, '{{appsmith.store.sanitizedPrice}}')\nON DUPLICATE KEY UPDATE \n    quantity = quantity + VALUES(quantity), \n    price = VALUES(price);\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -1,12 +1,16 @@
 export default {
     async register() {
         try {
+            // Clear any existing user/client data
+            await storeValue('userID', null);
+            await storeValue('clientId', null);
+
             // Retrieve the input values (use correct widget properties)
             const vatNumber = vat_number.value?.toString().trim();
             const email = inp_registerEmail.text?.trim();
             const password = inp_registerPassword.text?.trim();
             const firstName = first_name.text?.trim();
-            const representant = representant_.text?.trim();  // Updated variable name
+            const representant = representant_.text?.trim();
             const phone = inp_phone.value?.toString().trim();
             const address = inp_address.text?.trim();
 
@@ -15,7 +19,7 @@ export default {
             console.log('Email:', email);
             console.log('Password:', password);
             console.log('First Name:', firstName);
-            console.log('Representative:', representant);  // Log representative after declaration
+            console.log('Representative:', representant);
             console.log('Phone:', phone);
             console.log('Address:', address);
 
@@ -43,7 +47,7 @@ export default {
             await SignUp_sql.run();
 
             showAlert('Registration Successful!', 'success');
-            navigateTo('Dashboard');
+            navigateTo('Dashboard', { user_id: vatNumber }, 'SAME_WINDOW');
         } catch (error) {
             console.error('Error during registration:', error);
             showAlert('Registration failed. Please try again.', 'error');
@@ -55,3 +59,4 @@ export default {
 // register.js - Handles user registration and stores clientId (VAT)
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
