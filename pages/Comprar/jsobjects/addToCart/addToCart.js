@@ -4,7 +4,12 @@ export default {
             const selectedProduct = Table_products.selectedRow;
 
             // Get product ID and ensure it is a valid integer
-            const productId = parseInt(selectedProduct?.product_id || selectedProduct?.Product_ID, 10);
+            const productId = parseInt(
+                selectedProduct?.product_id || 
+                selectedProduct?.Product_ID || 
+                selectedProduct?.ID, 
+                10
+            );
             if (isNaN(productId) || productId <= 0) {
                 showAlert("O produto selecionado não possui um ID válido.", "error");
                 console.error("Invalid product ID:", productId);
@@ -13,7 +18,10 @@ export default {
 
             // Get price and ensure it is a valid float
             const sanitizedPrice = parseFloat(
-                (selectedProduct.price || selectedProduct.PriceRaw || "0")
+                (selectedProduct.price || 
+                selectedProduct.PriceRaw || 
+                selectedProduct.Valor || 
+                "0")
                     .toString()
                     .replace(/[€$,]/g, "")
                     .replace(",", ".")
@@ -25,7 +33,10 @@ export default {
             }
 
             // Get product name and ensure it is not empty
-            const productName = selectedProduct.name || selectedProduct.Name || "Unknown Product";
+            const productName = selectedProduct.name || 
+                                selectedProduct.Nome || 
+                                selectedProduct.Product_Name || 
+                                "Unknown Product";
             if (!productName) {
                 showAlert("O nome do produto está vazio.", "error");
                 console.error("Invalid product name:", productName);
