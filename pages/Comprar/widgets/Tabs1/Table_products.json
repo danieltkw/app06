@@ -39,7 +39,7 @@
     "PriceRaw",
     "ID"
   ],
-  "columnUpdatedAt": 1732661280583,
+  "columnUpdatedAt": 1732662043468,
   "columnWidthMap": {
     "Category": 107,
     "Price": 94,
@@ -282,7 +282,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "SKU",
       "notation": "standard",
       "originalId": "SKU",

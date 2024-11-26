@@ -37,9 +37,11 @@
     "product_name",
     "card_id",
     "vat_number",
-    "product_id"
+    "product_id",
+    "ProductName",
+    "PriceFormatted"
   ],
-  "columnUpdatedAt": 1732659352940,
+  "columnUpdatedAt": 1732662611529,
   "columnWidthMap": {
     "price": 93,
     "product_name": 346,
@@ -85,6 +87,12 @@
     },
     {
       "key": "primaryColumns.total_price.computedValue"
+    },
+    {
+      "key": "primaryColumns.ProductName.computedValue"
+    },
+    {
+      "key": "primaryColumns.PriceFormatted.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -119,6 +127,74 @@
   "parentId": "d1s2fj97ag",
   "parentRowSpace": 10,
   "primaryColumns": {
+    "PriceFormatted": {
+      "alias": "PriceFormatted",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{table_scard.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"PriceFormatted\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "PriceFormatted",
+      "index": 8,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "PriceFormatted",
+      "notation": "standard",
+      "originalId": "PriceFormatted",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "ProductName": {
+      "alias": "ProductName",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{table_scard.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"ProductName\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "ProductName",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "ProductName",
+      "notation": "standard",
+      "originalId": "ProductName",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "card_id": {
       "alias": "card_id",
       "allowCellWrapping": false,

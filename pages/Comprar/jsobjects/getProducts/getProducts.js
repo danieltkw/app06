@@ -4,7 +4,6 @@ export default {
             const result = await getProductsQuery.run(); // Fetch product data
 
             const products = result.map((p) => ({
-
                 Valor: parseFloat(p.price || 0).toLocaleString("pt-PT", {
                     style: "currency",
                     currency: "EUR",
