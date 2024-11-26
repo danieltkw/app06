@@ -21,7 +21,7 @@ SELECT
   o.updated
 FROM db_orders o
 INNER JOIN db_users u 
-  ON o.vat_number = u.vat_number COLLATE utf8mb4_general_ci  -- Set the correct collation here
+  ON o.vat_number = u.vat_number COLLATE utf8mb4_general_ci
 WHERE u.vat_number = '{{appsmith.store.clientId}}'
 ORDER BY o.created DESC;
 -- File: getOrders.sql

@@ -14,7 +14,7 @@ export default {
             const ordersData = await getOrders.run({ vat_number: clientId });
 
             if (ordersData && Array.isArray(ordersData)) {
-                // Process the data to format the table
+                // Extract and format only the relevant data for the table
                 const formattedOrders = ordersData.map((order) => ({
                     ID_Pedido: order.order_id,
                     Valor: parseFloat(order.total || 0).toLocaleString("pt-PT", {
@@ -22,7 +22,7 @@ export default {
                         currency: "EUR",
                     }),
                     Morada: order.shipping_address || "Não informado",
-                    Data: new Date(order.created_at).toLocaleDateString("pt-PT"),
+                    Data: new Date(order.created).toLocaleDateString("pt-PT"),
                     Estado: order.delivery_status || "Pendente",
                 }));
 
@@ -43,7 +43,6 @@ export default {
 
 // ------------------------------------------------------------
 // getOrdersCard.js - Fetches and displays orders for the selected client.
-// Functions:
-// - getOrdersCard: Fetches orders and populates the table widget with formatted data.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
