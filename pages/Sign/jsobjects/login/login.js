@@ -24,22 +24,22 @@ export default {
                 // showAlert('Password comparison result: ' + isPasswordValid);
 
                 if (isPasswordValid) {
-                    showAlert('Login Successful!', 'success');
+                    showAlert('Login bem-sucedido!', 'success');
                     const userID = user.vat_number;
                     console.log('Storing userID:', userID);  // Added log for userID
                     await storeValue('userID', userID);
                     navigateTo('Dashboard', { user_id: userID }, 'SAME_WINDOW');
                 } else {
-                    showAlert('Invalid password', 'error');
+                    showAlert('Senha inválida', 'error');
                     console.log('Password mismatch.');
                 }
             } else {
-                showAlert('User not found', 'error');
+                showAlert('Usuário não encontrado', 'error');
                 console.log('User not found with email:', email);
             }
         } catch (error) {
             console.error('Error during login:', error);
-            showAlert('An error occurred during login: ' + error, 'error');
+            showAlert('Ocorreu um erro durante o login: ' + error, 'error');
         }
     }
 };

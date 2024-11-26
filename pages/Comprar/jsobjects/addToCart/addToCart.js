@@ -61,7 +61,10 @@ export default {
             showAlert("Produto adicionado ao carrinho com sucesso!", "success");
 
             // Refresh cart data
-            await getCardQuery.run({ vat_number: vatNumber });
+            await getCard.getCard();
+
+            // Calculate total value
+            await calculateTotalValue.calculateTotalValue();
         } catch (error) {
             console.error("Erro ao adicionar produto ao carrinho:", error);
             if (error?.message) {
@@ -71,6 +74,8 @@ export default {
         }
     }
 };
+
+// addToCart.js
 
 
 

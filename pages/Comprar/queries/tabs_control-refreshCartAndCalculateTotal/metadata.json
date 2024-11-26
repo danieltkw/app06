@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "66f13446f75d0d57e7f48b12_e5988d73-3434-4f02-bcd4-d033136fec1b",
-  "id": "Comprar_tabs_control.refreshCart",
+  "gitSyncId": "66f13446f75d0d57e7f48b12_18f1f7f7-b476-4aef-9ea9-56427a08ffb7",
+  "id": "Comprar_tabs_control.refreshCartAndCalculateTotal",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -23,8 +23,8 @@
       }
     ],
     "executeOnLoad": true,
-    "fullyQualifiedName": "tabs_control.refreshCart",
-    "name": "refreshCart",
+    "fullyQualifiedName": "tabs_control.refreshCartAndCalculateTotal",
+    "name": "refreshCartAndCalculateTotal",
     "pageId": "Comprar",
     "userSetOnLoad": true
   }

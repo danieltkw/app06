@@ -25,7 +25,7 @@ export default {
 
             // Ensure all required fields are filled
             if (!vatNumber || !email || !password || !firstName || !representant || !phone || !address) {
-                showAlert('Please fill in all required fields.', 'error');
+                showAlert('Por favor, preencha os campos.', 'error');
                 return;
             }
 
@@ -46,11 +46,13 @@ export default {
             // Registration query
             await SignUp_sql.run();
 
-            showAlert('Registration Successful!', 'success');
+            showAlert('Registro feito!', 'success');
+
             navigateTo('Dashboard', { user_id: vatNumber }, 'SAME_WINDOW');
         } catch (error) {
             console.error('Error during registration:', error);
-            showAlert('Registration failed. Please try again.', 'error');
+            showAlert('Erro no registro. Repita.', 'error');
+
         }
     }
 };

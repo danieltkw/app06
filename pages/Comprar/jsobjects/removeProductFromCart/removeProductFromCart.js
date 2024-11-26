@@ -12,7 +12,10 @@ export default {
                 });
 
                 showAlert('Produto removido!', 'success');
-                await getCardQuery.run({ vat_number: appsmith.store.clientId });  // Refresh cart
+
+                // Refresh cart data and recalculate total
+                await getCard.getCard(); // Refresh the cart table
+                await calculateTotalValue.calculateTotalValue(); // Update the total value
             } catch (error) {
                 console.error('Error removing product from cart:', error);
                 showAlert('Erro em remover o produto', 'error');
@@ -32,7 +35,10 @@ export default {
             });
 
             showAlert('Carrinho esvaziado!', 'success');
-            await getCardQuery.run({ vat_number: appsmith.store.clientId });  // Refresh cart
+
+            // Refresh cart data and reset total
+            await getCard.getCard(); // Refresh the cart table
+            await calculateTotalValue.calculateTotalValue(); // Update the total value
         } catch (error) {
             console.error('Error clearing cart:', error);
             showAlert('Falha em limpar carrinho', 'error');
@@ -45,4 +51,5 @@ export default {
 // clearCart.js - Handles clearing the entire cart for the user.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
 

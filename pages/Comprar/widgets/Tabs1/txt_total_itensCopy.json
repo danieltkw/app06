@@ -47,7 +47,7 @@
     "label"
   ],
   "shouldTruncate": false,
-  "text": "Total: - {{ appsmith.store.totalValue ? appsmith.store.totalValue.toLocaleString('pt-PT', { style: 'currency', currency: 'EUR' }) : '0,00 €' }} ",
+  "text": "Total: - {{ appsmith.store.totalValue ? appsmith.store.totalValue.toLocaleString('pt-PT', { style: 'currency', currency: 'EUR' }) : '0,00 €' }}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 0,
