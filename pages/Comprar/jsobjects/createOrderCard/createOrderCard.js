@@ -62,6 +62,10 @@ export default {
 
             // Recalculate the total value to ensure it reflects the cleared cart
             await calculateTotalValue.calculateTotalValue();
+
+            // Refresh the orders to show the new order
+            await getOrdersCard.getOrdersCard();
+
         } catch (error) {
             console.error('Erro criando pedido:', error);
             showAlert('Falhou. Tente novamente.', 'error');
@@ -71,7 +75,8 @@ export default {
 
 // ------------------------------------------------------------
 // createOrder.js - Handles creating an order from the cart, clearing the cart, 
-// and updating the total value afterwards.
+// and updating the orders table afterwards.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
 
