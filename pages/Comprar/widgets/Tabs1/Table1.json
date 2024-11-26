@@ -37,7 +37,7 @@
     "Data",
     "Estado"
   ],
-  "columnUpdatedAt": 1732663680415,
+  "columnUpdatedAt": 1732664538568,
   "columnWidthMap": {
     "ID_Pedido": 114,
     "created": 172,
@@ -288,7 +288,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{getOrders.data}}",
+  "tableData": "{{ Table1.data }}",
   "textSize": "0.875rem",
   "topRow": 0,
   "totalRecordsCount": 0,
