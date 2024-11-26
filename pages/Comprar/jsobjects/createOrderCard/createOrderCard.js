@@ -59,6 +59,9 @@ export default {
 
             // Refresh the cart to reflect the cleared state
             await getCardQuery.run({ vat_number: clientId });
+
+            // Recalculate the total value to ensure it reflects the cleared cart
+            await calculateTotalValue.calculateTotalValue();
         } catch (error) {
             console.error('Erro criando pedido:', error);
             showAlert('Falhou. Tente novamente.', 'error');
@@ -67,6 +70,8 @@ export default {
 };
 
 // ------------------------------------------------------------
-// createOrder.js - Handles creating an order from the cart and clearing the cart afterwards.
+// createOrder.js - Handles creating an order from the cart, clearing the cart, 
+// and updating the total value afterwards.
 // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
 // ------------------------------------------------------------
+
